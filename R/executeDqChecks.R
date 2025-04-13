@@ -287,6 +287,8 @@ executeDqChecks <- function(connectionDetails,
   fieldChecks$cdmFieldName <- toupper(fieldChecks$cdmFieldName)
   conceptChecks$cdmFieldName <- toupper(conceptChecks$cdmFieldName)
 
+  print(checkDescriptions)
+
   cluster <- ParallelLogger::makeCluster(numberOfThreads = numThreads, singleThreadToMain = TRUE)
   resultsList <- ParallelLogger::clusterApply(
     cluster = cluster, x = checkDescriptions,
