@@ -92,6 +92,12 @@
 
       sql <- do.call(SqlRender::loadRenderTranslateSql, params)
 
+
+      params2 <- params
+      saveRDS(params2, file = "P:/R_Test/params.rds")
+      quit(save = "no", status = 0)
+   
+
       if (sqlOnly && sqlOnlyIncrementalInsert) {
         checkQuery <- .createSqlOnlyQueries(
           params,
